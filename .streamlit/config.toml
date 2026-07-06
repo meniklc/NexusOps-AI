@@ -1,0 +1,23 @@
+# ---------------------------------------------------------------------------
+# Streamlit theming for the Enterprise RAG frontend.
+#
+# Streamlit reads this file relative to the working directory it's launched
+# from. Locally that's the repo root (`streamlit run frontend/app.py`); in the
+# frontend container it's /code (see Dockerfile.frontend, which copies this in).
+# The app also injects a small CSS block for the pieces native theming can't
+# reach (chat bubbles, badges, input) — this file owns the base palette.
+# ---------------------------------------------------------------------------
+[theme]
+base = "dark"
+primaryColor = "#6366f1"            # indigo accent (buttons, focus, links)
+backgroundColor = "#0e0e10"         # near-black app background
+secondaryBackgroundColor = "#16161a"  # sidebar / cards / input
+textColor = "#e7e7ea"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false
+
+[client]
+# Hide the default "Made with Streamlit" toolbar affordances for a product feel.
+toolbarMode = "minimal"

@@ -1,0 +1,17 @@
+FROM python:3.11-slim
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1
+
+WORKDIR /code
+
+COPY frontend/requirements.txt .
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
+COPY frontend ./frontend
+# Streamlit reads .streamlit/config.toml relative to the launch CWD (/code).
+COPY .streamlit ./.streamlit
+
+EXPOSE 8501
+CMD ["streamlit", "run", "frontend/app.py", "--server.address", "0.0.0.0", "--server.port", "8501"]
