@@ -11,6 +11,7 @@ The LLM provider is abstracted: run entirely **offline for free** with a
 deterministic Fake provider, or flip one env var to use **OpenAI**.
 
 ---
+<img width="1912" height="862" alt="Screenshot 2026-07-07 031941" src="https://github.com/user-attachments/assets/1c6250a1-d593-41c7-badf-ad82b288efe0" />
 
 ## Architecture
 
